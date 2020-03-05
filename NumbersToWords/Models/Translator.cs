@@ -6,6 +6,9 @@ namespace NumbersToWords.Models
   public class Translator
   {
     public static int Number { get; set; }
+    public static int hundredsNum { get; set; }
+    public static int tensNum { get; set; }
+    public static int onesNum { get; set; }
 
     public Translator(int number)
     {
@@ -42,12 +45,33 @@ namespace NumbersToWords.Models
       return result;
     }
 
+    public static string GetTens()
+    {
+      string result = "";
+      foreach (KeyValuePair<int, string> tens in tensPosition)
+      {
+        if(tens.Key == Translator.Number)
+        {
+          result = tens.Value;
+        } 
+      } 
+      return result;
+    }
 
-  // public List<int> GetNumArr(int number)
-  // {
-  //   List<int> numList = new List<int> {};
+    public static int[] GetNumArr()
+    {
+      List<int> listOfInts = new List<int>();
+      while(Translator.Number > 0)
+      {
+        listOfInts.Add(Translator.Number % 10);
+        Translator.Number = Translator.Number / 10;
+      }
+      listOfInts.Reverse();
+      return listOfInts.ToArray();
+    }
+
     
-  //   return numList;
-  // }
-  }
+  }  
 }
+  
+
