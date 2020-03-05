@@ -12,8 +12,10 @@ A console app that translates numbers in numeric form into written words.
 
 | Specification | Example Input | Example Output |
 | ----------- |------------| ------------ |
-
-
+|User inputs a number in the ones position | 6 | Six | 
+|User inputs a multi character number, in the tens position | 16 | Sixteen |  
+|User inputs a multi character number, in the hundreds position | 166 | One-hundred sixty-six |  
+|If user inputs a number in the thousands, we append the word "thousand" | 423,666 | Four hundred twenty three-thousand, six-hundred sixty-six.
 
 ## Setup/Installation Requirements
 

@@ -7,10 +7,21 @@ namespace NumbersToWords.Tests
   public class TranslatorTests
   {
     [TestMethod]
-    public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
+    public void Translator_CreateInstance_NewInstance()
     {
-    // any necessary logic to prep for test; instantiating new classes, etc.
-    Assert.AreEqual(EXPECTED RESULT, CODE TO TEST);
+      Translator newTranslator = new Translator(358);
+      Assert.AreEqual(typeof(Translator), newTranslator.GetType());
     }
+
+    [TestMethod]
+    public void GetOnes_GetWordsOfOnesPosition_WordsOfOnesNumber()
+    {
+      //Arragne
+      Translator newTranslator = new Translator(8);
+      //Act
+      string result = newTranslator.GetOnes();
+      //Assert
+      Assert.AreEqual("eight", result);
+    }    
   }
 }
