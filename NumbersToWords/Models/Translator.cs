@@ -6,9 +6,6 @@ namespace NumbersToWords.Models
   public class Translator
   {
     public static int Number { get; set; }
-    public static int hundredsNum { get; set; }
-    public static int tensNum { get; set; }
-    public static int onesNum { get; set; }
 
     public Translator(int number)
     {
@@ -70,7 +67,16 @@ namespace NumbersToWords.Models
       return listOfInts.ToArray();
     }
 
-    
+    public static string GetWords()
+    {
+      string result = "";
+      if (Translator.Number < 10)
+      {
+        result = GetOnes();
+      }
+      return result;
+    }
+
   }  
 }
   

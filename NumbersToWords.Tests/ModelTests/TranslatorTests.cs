@@ -68,6 +68,17 @@ namespace NumbersToWords.Tests
       //Assert
       CollectionAssert.AreEqual(expected, result);
     }  
+
+    [TestMethod]
+    public void GetWords_GetWords_Ones()
+    {
+      //Arragne
+      Translator newTranslator = new Translator(9);
+      //Act
+      string result = Translator.GetWords();
+      //Assert
+      Assert.AreEqual("nine", result);
+    }
   }
 }
 
