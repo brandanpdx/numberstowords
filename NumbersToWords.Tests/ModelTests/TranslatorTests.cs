@@ -17,11 +17,25 @@ namespace NumbersToWords.Tests
     public void GetOnes_GetWordsOfOnesPosition_WordsOfOnesNumber()
     {
       //Arragne
-      Translator newTranslator = new Translator(8);
+      Translator newTranslator = new Translator(7);
       //Act
-      string result = newTranslator.GetOnes();
+      string result = Translator.GetOnes();
       //Assert
       Assert.AreEqual("eight", result);
     }    
+
+    [TestMethod]
+    public void GetOnes_GetWordsOfTeesPosition_WordsOfTeensNumber()
+    {
+      //Arragne
+      Translator newTranslator = new Translator(16);
+      //Act
+      string result = Translator.GetTeens();
+      //Assert
+      Assert.AreEqual("sixteen", result);
+    }  
   }
 }
+
+
+

@@ -5,30 +5,43 @@ namespace NumbersToWords.Models
 {
   public class Translator
   {
-  int Number { get; set; }
+    public static int Number { get; set; }
 
     public Translator(int number)
     {
       Number = number;
     }
+      
+    public static Dictionary<int, string> onesPosition = new Dictionary<int, string>() { {0, ""}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}, {6, "six"}, {7, "seven"}, {8, "eight"}, {9, "nine"} };
+    public static Dictionary<int, string> teensPosition = new Dictionary<int, string>() { {10, "ten"}, {11, "eleven"}, {12, "twelve"}, {13, "thirteen"}, {14, "fourteen"}, {15, "fifteen"}, {16, "sixteen"}, {17, "seventeen"}, {18, "eighteen"}, {19, "nineteen"} };
+    public static Dictionary<int, string> tensPosition = new Dictionary<int, string>() { {2, "twenty"}, {3, "thirty"}, {4, "fourty"}, {5, "fifty"}, {6, "sixty"}, {7, "seventy"}, {8, "eighty"}, {9, "ninety"} };
     
-  Dictionary<int, string> onesPosition = new Dictionary<int, string>() { {0, ""}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}, {6, "six"}, {7, "seven"}, {8, "eight"}, {9, "nine"} };
-  Dictionary<int, string> teensPosition = new Dictionary<int, string>() { {10, "ten"}, {11, "eleven"}, {12, "twelve"}, {13, "thirteen"}, {14, "fourteen"}, {15, "fifteen"}, {16, "sixteen"}, {17, "seventeen"}, {18, "eighteen"}, {19, "nineteen"} };
-  Dictionary<int, string> tensPosition = new Dictionary<int, string>() { {2, "twenty"}, {3, "thirty"}, {4, "fourty"}, {5, "fifty"}, {6, "sixty"}, {7, "seventy"}, {8, "eighty"}, {9, "ninety"} };
-  
-
-  public string GetOnes()
+    public static string GetOnes()
     {
       string result = "";
       foreach (KeyValuePair<int, string> ones in onesPosition)
       {
-        if(ones.Key == 5)
+        if(ones.Key == Translator.Number)
         {
           result = ones.Value;
         } 
       } 
       return result;
     }
+
+    public static string GetTeens()
+    {
+      string result = "";
+      foreach (KeyValuePair<int, string> teens in teensPosition)
+      {
+        if(teens.Key == Translator.Number)
+        {
+          result = teens.Value;
+        } 
+      } 
+      return result;
+    }
+
 
   // public List<int> GetNumArr(int number)
   // {
