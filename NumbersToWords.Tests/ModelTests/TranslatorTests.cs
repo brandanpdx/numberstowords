@@ -79,6 +79,17 @@ namespace NumbersToWords.Tests
       //Assert
       Assert.AreEqual("nine", result);
     }
+
+    [TestMethod]
+    public void GetWords_GetWords_Teens()
+    {
+      //Arragne
+      Translator newTranslator = new Translator(12);
+      //Act
+      string result = Translator.GetWords();
+      //Assert
+      Assert.AreEqual("twelve", result);
+    }
   }
 }
 

@@ -11,21 +11,21 @@ namespace NumbersToWords.Models
     {
       Number = number;
     }
-      
-    public static Dictionary<int, string> onesPosition = new Dictionary<int, string>() { {0, ""}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}, {6, "six"}, {7, "seven"}, {8, "eight"}, {9, "nine"} };
-    public static Dictionary<int, string> teensPosition = new Dictionary<int, string>() { {10, "ten"}, {11, "eleven"}, {12, "twelve"}, {13, "thirteen"}, {14, "fourteen"}, {15, "fifteen"}, {16, "sixteen"}, {17, "seventeen"}, {18, "eighteen"}, {19, "nineteen"} };
-    public static Dictionary<int, string> tensPosition = new Dictionary<int, string>() { {2, "twenty"}, {3, "thirty"}, {4, "fourty"}, {5, "fifty"}, {6, "sixty"}, {7, "seventy"}, {8, "eighty"}, {9, "ninety"} };
-    
+
+    public static Dictionary<int, string> onesPosition = new Dictionary<int, string>() { { 0, "" }, { 1, "one" }, { 2, "two" }, { 3, "three" }, { 4, "four" }, { 5, "five" }, { 6, "six" }, { 7, "seven" }, { 8, "eight" }, { 9, "nine" } };
+    public static Dictionary<int, string> teensPosition = new Dictionary<int, string>() { { 10, "ten" }, { 11, "eleven" }, { 12, "twelve" }, { 13, "thirteen" }, { 14, "fourteen" }, { 15, "fifteen" }, { 16, "sixteen" }, { 17, "seventeen" }, { 18, "eighteen" }, { 19, "nineteen" } };
+    public static Dictionary<int, string> tensPosition = new Dictionary<int, string>() { { 2, "twenty" }, { 3, "thirty" }, { 4, "fourty" }, { 5, "fifty" }, { 6, "sixty" }, { 7, "seventy" }, { 8, "eighty" }, { 9, "ninety" } };
+
     public static string GetOnes()
     {
       string result = "";
       foreach (KeyValuePair<int, string> ones in onesPosition)
       {
-        if(ones.Key == Translator.Number)
+        if (ones.Key == Translator.Number)
         {
           result = ones.Value;
-        } 
-      } 
+        }
+      }
       return result;
     }
 
@@ -34,11 +34,11 @@ namespace NumbersToWords.Models
       string result = "";
       foreach (KeyValuePair<int, string> teens in teensPosition)
       {
-        if(teens.Key == Translator.Number)
+        if (teens.Key == Translator.Number)
         {
           result = teens.Value;
-        } 
-      } 
+        }
+      }
       return result;
     }
 
@@ -47,18 +47,18 @@ namespace NumbersToWords.Models
       string result = "";
       foreach (KeyValuePair<int, string> tens in tensPosition)
       {
-        if(tens.Key == Translator.Number)
+        if (tens.Key == Translator.Number)
         {
           result = tens.Value;
-        } 
-      } 
+        }
+      }
       return result;
     }
 
     public static int[] GetNumArr()
     {
       List<int> listOfInts = new List<int>();
-      while(Translator.Number > 0)
+      while (Translator.Number > 0)
       {
         listOfInts.Add(Translator.Number % 10);
         Translator.Number = Translator.Number / 10;
@@ -74,10 +74,22 @@ namespace NumbersToWords.Models
       {
         result = GetOnes();
       }
-      return result;
-    }
+      else if (Translator.Number >= 10 && Translator.Number < 20)
+      {
+        result = GetTeens();
+      }
 
-  }  
-}
+      if (Translator.Number >= 20)
+      {
+        public static int[] arr = GetNumArr();
+        for (int i = 0; i > arr.length; i++)
+        {
+          
+        }
+      return result
+    }
+  }
+}  
+
   
 
